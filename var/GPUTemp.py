@@ -1,5 +1,5 @@
 class GPUTemp:
-    def __init__(self, min=0, max=90):
+    def __init__(self, min=20, max=90):
         self.min = min
         self.max = max
 
