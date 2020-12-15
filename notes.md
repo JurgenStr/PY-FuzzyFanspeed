@@ -1,5 +1,7 @@
 # Pengelompokan Linguistic Variables:
-## Component Temperature (Inside PC Casing)
+## CPU Temperature
+
+## GPU Temperature
 - 
 ## Environment Temperature
 - 
