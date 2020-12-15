@@ -17,5 +17,5 @@ Menggunakan sistem fuzzy untuk menentukan kecepatan kipas PC berdasarkan tempera
 
 # Kelompok
 - Juandito Batara Kuncoro (18/427582/PA/18542)
-- Nauval Raafi Tanuwijaya
-- Setyawan Putra Sujana
+- Setyawan Putra Sujana (18/427594/PA/18554)
+- Nauval Raafi Tanuwijaya (18/430271/PA/18784)
