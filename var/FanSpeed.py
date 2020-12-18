@@ -1,5 +1,5 @@
 class FanSpeed:
-    def __init__(self, min=500, max=2000):
+    def __init__(self, min=400, max=2000):
         self.min = min
         self.max = max
 
