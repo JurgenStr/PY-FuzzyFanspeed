@@ -71,3 +71,5 @@
 - Component Temperature: https://www.techcenturion.com/optimal-temperature-of-cpu-and-gpu
 - Component Temp. & Env. Temp.: https://www.makeuseof.com/tag/pc-operating-temperatures-hot-hot/
 - Room Noise: https://www.archtoolbox.com/materials-systems/architectural-concepts/architectural-acoustics-acceptable-room-levels.html
+- Fan Speed: https://www.buildcomputers.net/power-consumption-of-pc-components.html
+- Fan Speed: https://linustechtips.com/topic/702567-how-many-rpm-do-you-run-your-fans-at/
