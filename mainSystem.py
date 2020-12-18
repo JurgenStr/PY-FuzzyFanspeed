@@ -37,3 +37,4 @@ class Rule:
             value == min(value, self.Noise.getNormalValue(Noise))
         elif term == "hot":
             value == min(value, self.Noise.getLoudValue(Noise))
+
