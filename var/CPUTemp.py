@@ -3,16 +3,16 @@ class CPUTemp:
         self.min = min
         self.max = max
 
-    #Fuzzifier
+    # Fuzzifier
     def getColdValue(self, val):
         a = 30
         b = 40
 
-        if val < a :
+        if val < a:
             return 1
-        elif val < b :
+        elif val < b:
             return (b-val)/b-a
-        else :
+        else:
             return 0
 
     def getSafeValue(self, val):
@@ -21,24 +21,24 @@ class CPUTemp:
         e = 65
         f = 80
 
-        if val < c :
+        if val < c:
             return 0
-        elif val < d :
+        elif val < d:
             return (val-d)/(d-c)
-        elif val < e :
+        elif val < e:
             return 1
-        elif val < f :
+        elif val < f:
             return (f-val)/(f-e)
-        else :
+        else:
             return 0
 
     def getHotValue(self, val):
         g = 75
         h = 90
 
-        if val < g :
+        if val < g:
             return 0
-        elif val < h :
+        elif val < h:
             return (val-h)/(h-g)
-        else :
+        else:
             return 1

@@ -3,8 +3,8 @@ class GPUTemp:
         self.min = min
         self.max = max
 
-    # Fuzzifier: {Low, Normal, High}
-    def lowTemperature(self, temp):
+    # Fuzzifier: {Cold, Safe, Hot}
+    def coldTemperature(self, temp):
         firstT = 30
         secondT = 40
 
@@ -15,7 +15,7 @@ class GPUTemp:
         else:
             return 0
 
-    def normalTemperature(self, temp):
+    def safeTemperature(self, temp):
         firstT = 35
         secondT = 45
         thirdT = 55
@@ -32,7 +32,7 @@ class GPUTemp:
         else:
             return 0
 
-    def highTemperature(self, temp):
+    def hotTemperature(self, temp):
         firstT = 60
         secondT = 80
 

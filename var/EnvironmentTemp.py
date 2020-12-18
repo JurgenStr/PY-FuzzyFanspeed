@@ -3,7 +3,7 @@ class EnvironmentTemp:
         self.min = min
         self.max = max
 
-    # Fuzzifier {Cold, Normal, Hot}
+    # Fuzzifier {Cold, Safe, Hot}
     def getColdValue(self, temp):
         firstT = 15
         secondT = 23
@@ -15,7 +15,7 @@ class EnvironmentTemp:
         else:
             return 0
 
-    def getNormalValue(self, temp):
+    def getSafeValue(self, temp):
         firstT = 20
         secondT = 23
         thirdT = 27
