@@ -26,7 +26,7 @@ class FanSpeed:
         else:
             return 1
 
-    #Defuzzifier
+    # Defuzzifier
     def getVerySlowDomain(self, val):
         slowBoundary = 800
         slowLimit = 1200
@@ -40,9 +40,9 @@ class FanSpeed:
     def getFastDomain(self, val):
         fastBoundary = 1000
         fastLimit = 1400
-        return  fastLimit - val * (fastLimit - fastBoundary)
+        return fastBoundary + val * (fastLimit - fastBoundary)
 
     def getVeryFastDomain(self, val):
         fastBoundary = 1000
         fastLimit = 1400
-        return fastLimit - val * val * (fastLimit - fastBoundary)
+        return fastBoundary + val * val * (fastLimit - fastBoundary)
