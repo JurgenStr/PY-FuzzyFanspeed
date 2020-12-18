@@ -4,7 +4,7 @@ class FanSpeed:
         self.max = max
 
     # Fuzzifier
-    def SlowSpeed(self, rpm):
+    def slowSpeed(self, rpm):
         slowBoundary = 800
         slowLimit = 1200
 
@@ -15,7 +15,7 @@ class FanSpeed:
         else:
             return 0
 
-    def FastSpeed(self, rpm):
+    def fastSpeed(self, rpm):
         fastBoundary = 1000
         fastLimit = 1400
 
@@ -32,18 +32,15 @@ class FanSpeed:
         slowLimit = 1200
         return slowLimit - val * val * (slowLimit-slowBoundary)
 
-
     def getSlowDomain(self, val):
         slowBoundary = 800
         slowLimit = 1200
         return slowLimit - val * (slowLimit - slowBoundary)
 
-
     def getFastDomain(self, val):
         fastBoundary = 1000
         fastLimit = 1400
         return  fastLimit - val * (fastLimit - fastBoundary)
-
 
     def getVeryFastDomain(self, val):
         fastBoundary = 1000
