@@ -4,6 +4,7 @@ from var.Noise import Noise
 from var.FanSpeed import FanSpeed
 from var.Rules import Rule
 
+# Initiating Values
 CPU = CPUTemp()
 Env = EnvironmentTemp()
 Noise = Noise()
@@ -49,13 +50,19 @@ completeRule = []
 for rule in rules:
     completeRule.append(Rule(Variables, rule))
 
-# Init values
-CPUTemperature = 35
-EnvTemperature = 30
-NoiseValue = 47
+# Start Program
+print("== CPU Fan Speed Fuzzy System ==\n")
+print("Juandito Batara Kuncoro (18/427582/PA/18542)")
+print("Setyawan Putra Sujana (18/427594/PA/18554)")
+print("Nauval Raafi Tanuwijaya (18/430271/PA/18784)")
+CPUTemperature = int(input("CPU Temperature (0 celcius - 110 celcius): "))
+EnvTemperature = int(
+    input("Environment Temperature (10 celcius - 40 celcius): "))
+NoiseValue = int(input("Environment Noise (0 dB - 130 dB): "))
 values = (CPUTemperature, EnvTemperature, NoiseValue)
 
-# Inference Values
+# Finding Inference Values
+print("Calculating values...\n")
 totalRPM = 0
 totalMembershipValue = 0
 for i in range(len(completeRule)):
@@ -69,4 +76,5 @@ if totalMembershipValue == 0:
 else:
     finalRPM = totalRPM / totalMembershipValue
 
-print("Kecepatan fan: ", int(finalRPM), "rpm")
+print("CPU Fan Speed (400 rpm - 2000 rpm):", int(finalRPM), "rpm\n")
+input("Press any key to exit...")

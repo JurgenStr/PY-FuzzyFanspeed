@@ -14,21 +14,6 @@
   - < 75 Celcius        = 0
   - [75, 90] Celcius    = (x - 75) / 15
   - Others              = 1
-## GPU Temperature
-- Cold
-  - < 30 Celcius        = 1
-  - [30, 40] Celcius    = (40 - x) / 10
-  - Others              = 0
-- Safe
-  - < 35 Celcius        = 0
-  - [35, 45] Celcius    = (x - 35) / 10
-  - [45, 55] Celcius    = 1
-  - [55, 65] Celcius    = (65 - x) / 10
-  - Others              = 0
-- Hot
-  - < 60 Celcius        = 0
-  - [60, 80] Celcius    = (x - 60) / 20
-  - Others              = 1
 ## Environment Temperature
 - Cold
   - < 15 Celcius        = 1
@@ -59,35 +44,44 @@
   - < 53 dB             = 0
   - [53, 65] dB         = (x - 53) / 12
   - Others              = 1
+## Fan Speed
+- Very Slow
+  - 1200 - val * val * (800)
+- Slow
+  - 1200 - val * (800)
+- Fast
+  - 1000 + val * (1000)
+- Very Fast
+  - 1000 + val * val * (1000)
 
 ## Rules (3 parameters)
-- IF CPUTemp is Cold AND EnvironmentTemp is Cold AND Noise is Silent THEN FanSpeed is ...
-- IF CPUTemp is Safe AND EnvironmentTemp is Cold AND Noise is Silent THEN FanSpeed is ...
-- IF CPUTemp is Hot AND EnvironmentTemp is Cold AND Noise is Silent THEN FanSpeed is ...
-- IF CPUTemp is Cold AND EnvironmentTemp is Safe AND Noise is Silent THEN FanSpeed is ...
-- IF CPUTemp is Safe AND EnvironmentTemp is Safe AND Noise is Silent THEN FanSpeed is ...
-- IF CPUTemp is Hot AND EnvironmentTemp is Safe AND Noise is Silent THEN FanSpeed is ...
-- IF CPUTemp is Cold AND EnvironmentTemp is Hot AND Noise is Silent THEN FanSpeed is ...
-- IF CPUTemp is Safe AND EnvironmentTemp is Hot AND Noise is Silent THEN FanSpeed is ...
-- IF CPUTemp is Hot AND EnvironmentTemp is Hot AND Noise is Silent THEN FanSpeed is ...
-- IF CPUTemp is Cold AND EnvironmentTemp is Cold AND Noise is Normal THEN FanSpeed is ...
-- IF CPUTemp is Safe AND EnvironmentTemp is Cold AND Noise is Normal THEN FanSpeed is ...
-- IF CPUTemp is Hot AND EnvironmentTemp is Cold AND Noise is Normal THEN FanSpeed is ...
-- IF CPUTemp is Cold AND EnvironmentTemp is Safe AND Noise is Normal THEN FanSpeed is ...
-- IF CPUTemp is Safe AND EnvironmentTemp is Safe AND Noise is Normal THEN FanSpeed is ...
-- IF CPUTemp is Hot AND EnvironmentTemp is Safe AND Noise is Normal THEN FanSpeed is ...
-- IF CPUTemp is Cold AND EnvironmentTemp is Hot AND Noise is Normal THEN FanSpeed is ...
-- IF CPUTemp is Safe AND EnvironmentTemp is Hot AND Noise is Normal THEN FanSpeed is ...
-- IF CPUTemp is Hot AND EnvironmentTemp is Hot AND Noise is Normal THEN FanSpeed is ...
-- IF CPUTemp is Cold AND EnvironmentTemp is Cold AND Noise is Loud THEN FanSpeed is ...
-- IF CPUTemp is Safe AND EnvironmentTemp is Cold AND Noise is Loud THEN FanSpeed is ...
-- IF CPUTemp is Hot AND EnvironmentTemp is Cold AND Noise is Loud THEN FanSpeed is ...
-- IF CPUTemp is Cold AND EnvironmentTemp is Safe AND Noise is Loud THEN FanSpeed is ...
-- IF CPUTemp is Safe AND EnvironmentTemp is Safe AND Noise is Loud THEN FanSpeed is ...
-- IF CPUTemp is Hot AND EnvironmentTemp is Safe AND Noise is Loud THEN FanSpeed is ...
-- IF CPUTemp is Cold AND EnvironmentTemp is Hot AND Noise is Loud THEN FanSpeed is ...
-- IF CPUTemp is Safe AND EnvironmentTemp is Hot AND Noise is Loud THEN FanSpeed is ...
-- IF CPUTemp is Hot AND EnvironmentTemp is Hot AND Noise is Loud THEN FanSpeed is ...
+- IF CPUTemp is Cold AND EnvironmentTemp is Cold AND Noise is Silent THEN FanSpeed is Very Slow
+- IF CPUTemp is Safe AND EnvironmentTemp is Cold AND Noise is Silent THEN FanSpeed is Slow
+- IF CPUTemp is Hot AND EnvironmentTemp is Cold AND Noise is Silent THEN FanSpeed is Fast
+- IF CPUTemp is Cold AND EnvironmentTemp is Safe AND Noise is Silent THEN FanSpeed is Very Slow
+- IF CPUTemp is Safe AND EnvironmentTemp is Safe AND Noise is Silent THEN FanSpeed is Slow
+- IF CPUTemp is Hot AND EnvironmentTemp is Safe AND Noise is Silent THEN FanSpeed is Fast
+- IF CPUTemp is Cold AND EnvironmentTemp is Hot AND Noise is Silent THEN FanSpeed is Slow
+- IF CPUTemp is Safe AND EnvironmentTemp is Hot AND Noise is Silent THEN FanSpeed is Fast
+- IF CPUTemp is Hot AND EnvironmentTemp is Hot AND Noise is Silent THEN FanSpeed is Fast
+- IF CPUTemp is Cold AND EnvironmentTemp is Cold AND Noise is Normal THEN FanSpeed is Slow
+- IF CPUTemp is Safe AND EnvironmentTemp is Cold AND Noise is Normal THEN FanSpeed is Fast
+- IF CPUTemp is Hot AND EnvironmentTemp is Cold AND Noise is Normal THEN FanSpeed is Fast
+- IF CPUTemp is Cold AND EnvironmentTemp is Safe AND Noise is Normal THEN FanSpeed is Slow
+- IF CPUTemp is Safe AND EnvironmentTemp is Safe AND Noise is Normal THEN FanSpeed is Fast
+- IF CPUTemp is Hot AND EnvironmentTemp is Safe AND Noise is Normal THEN FanSpeed is Very Fast
+- IF CPUTemp is Cold AND EnvironmentTemp is Hot AND Noise is Normal THEN FanSpeed is Fast
+- IF CPUTemp is Safe AND EnvironmentTemp is Hot AND Noise is Normal THEN FanSpeed is Fast
+- IF CPUTemp is Hot AND EnvironmentTemp is Hot AND Noise is Normal THEN FanSpeed is Very Fast
+- IF CPUTemp is Cold AND EnvironmentTemp is Cold AND Noise is Loud THEN FanSpeed is Slow
+- IF CPUTemp is Safe AND EnvironmentTemp is Cold AND Noise is Loud THEN FanSpeed is Fast
+- IF CPUTemp is Hot AND EnvironmentTemp is Cold AND Noise is Loud THEN FanSpeed is Very Fast
+- IF CPUTemp is Cold AND EnvironmentTemp is Safe AND Noise is Loud THEN FanSpeed is Slow
+- IF CPUTemp is Safe AND EnvironmentTemp is Safe AND Noise is Loud THEN FanSpeed is Fast
+- IF CPUTemp is Hot AND EnvironmentTemp is Safe AND Noise is Loud THEN FanSpeed is Very Fast
+- IF CPUTemp is Cold AND EnvironmentTemp is Hot AND Noise is Loud THEN FanSpeed is Fast
+- IF CPUTemp is Safe AND EnvironmentTemp is Hot AND Noise is Loud THEN FanSpeed is Very Fast
+- IF CPUTemp is Hot AND EnvironmentTemp is Hot AND Noise is Loud THEN FanSpeed is Very Fast
 
 ## References
 - Component Temperature: https://www.techcenturion.com/optimal-temperature-of-cpu-and-gpu

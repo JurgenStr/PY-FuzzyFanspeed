@@ -11,7 +11,7 @@ class CPUTemp:
         if val < a:
             return 1
         elif val < b:
-            return (b-val)/b-a
+            return (b-val) / (b-a)
         else:
             return 0
 
@@ -24,7 +24,7 @@ class CPUTemp:
         if val < c:
             return 0
         elif val < d:
-            return (val-d)/(d-c)
+            return (val-c)/(d-c)
         elif val < e:
             return 1
         elif val < f:
@@ -39,6 +39,6 @@ class CPUTemp:
         if val < g:
             return 0
         elif val < h:
-            return (val-h)/(h-g)
+            return (val-g)/(h-g)
         else:
             return 1

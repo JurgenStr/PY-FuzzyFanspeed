@@ -4,16 +4,14 @@ Menggunakan sistem fuzzy untuk menentukan kecepatan kipas PC berdasarkan tempera
 # Inputs
 - CPU Temperature
   - {Cold, Safe, Hot}
-- GPU Temperature
-  - {Low, Normal, High}
 - Environment (Room) Temperature
-  - {Cold, Normal, Hot}
+  - {Cold, Safe, Hot}
 - Noise
   - {Silent, Normal, Loud}
 
 # Output
 - Fan Speed
-  - {Very Slow, Slow, Normal, Fast, Very Fast}
+  - {Very Slow, Slow, Fast, Very Fast}
 
 # Kelompok
 - Juandito Batara Kuncoro (18/427582/PA/18542)

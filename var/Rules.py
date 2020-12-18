@@ -6,29 +6,32 @@ class Rule:
     def getCPUValue(self, minValue, CPUTemp, term):
         # 1 = Cold, 2 = Safe, 3 = Hot
         if term == 1:
-            return min(minValue, self.CPU.getColdValue(CPUTemp))
+            minCPU = min(minValue, self.CPU.getColdValue(CPUTemp))
         elif term == 2:
-            return min(minValue, self.CPU.getSafeValue(CPUTemp))
+            minCPU = min(minValue, self.CPU.getSafeValue(CPUTemp))
         elif term == 3:
-            return min(minValue, self.CPU.getHotValue(CPUTemp))
+            minCPU = min(minValue, self.CPU.getHotValue(CPUTemp))
+        return minCPU
 
     def getEnvValue(self, minValue, EnvTemp, term):
         # 1 = Cold, 2 = Safe, 3 = Hot
         if term == 1:
-            return min(minValue, self.Environment.getColdValue(EnvTemp))
+            minEnv = min(minValue, self.Environment.getColdValue(EnvTemp))
         elif term == 2:
-            return min(minValue, self.Environment.getSafeValue(EnvTemp))
+            minEnv = min(minValue, self.Environment.getSafeValue(EnvTemp))
         elif term == 3:
-            return min(minValue, self.Environment.getHotValue(EnvTemp))
+            minEnv = min(minValue, self.Environment.getHotValue(EnvTemp))
+        return minEnv
 
     def getNoiseValue(self, minValue, NoiseScore, term):
         # 1 = Silent, 2 = Normal, 3 = Loud
         if term == 1:
-            return min(minValue, self.Noise.getSilentValue(NoiseScore))
+            minNoise = min(minValue, self.Noise.getSilentValue(NoiseScore))
         elif term == 2:
-            return min(minValue, self.Noise.getNormalValue(NoiseScore))
+            minNoise = min(minValue, self.Noise.getNormalValue(NoiseScore))
         elif term == 3:
-            return min(minValue, self.Noise.getLoudValue(NoiseScore))
+            minNoise = min(minValue, self.Noise.getLoudValue(NoiseScore))
+        return minNoise
 
     def getFanSpeed(self, minValue, term):
         rpm = 0
@@ -49,6 +52,5 @@ class Rule:
         minValue = self.getEnvValue(minValue, EnvTemp, self.EnvTerm)
         minValue = self.getNoiseValue(minValue, NoiseScore, self.NoiseTerm)
         rpm = self.getFanSpeed(minValue, self.FanTerm)
-        print(minValue)
         fixedRpm = rpm * minValue
         return minValue, fixedRpm
