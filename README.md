@@ -1,5 +1,5 @@
 # fuzzy-fanspeed
-Menggunakan sistem fuzzy untuk menentukan kecepatan kipas PC berdasarkan temperatur komponen (CPU dan GPU), temperatur ruangan, dan suara (noise) ruangan.
+Menggunakan sistem fuzzy untuk menentukan kecepatan kipas PC berdasarkan temperatur CPU, temperatur ruangan, dan suara (noise) ruangan.
 
 # Inputs
 - CPU Temperature
