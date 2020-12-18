@@ -55,10 +55,39 @@ print("== CPU Fan Speed Fuzzy System ==")
 print("Juandito Batara Kuncoro (18/427582/PA/18542)")
 print("Setyawan Putra Sujana (18/427594/PA/18554)")
 print("Nauval Raafi Tanuwijaya (18/430271/PA/18784)\n")
-CPUTemperature = int(input("CPU Temperature (0 celcius - 110 celcius): "))
-EnvTemperature = int(
-    input("Environment Temperature (10 celcius - 40 celcius): "))
-NoiseValue = int(input("Environment Noise (0 dB - 130 dB): "))
+while True:
+    try:
+        CPUTemperature = int(input("CPU Temperature (0 celcius - 110 celcius): "))
+    except:
+        print('Your input is not valid')
+        continue
+    if (CPUTemperature < 0) or (CPUTemperature > 110):
+        print('Please enter valid input')
+        continue
+    break
+
+while True:
+    try:
+        EnvTemperature = int(input("Environment Temperature (10 celcius - 40 celcius): "))
+    except:
+        print('Your input is not valid')
+        continue
+    if (EnvTemperature < 10) or (EnvTemperature > 40):
+        print('Please enter valid input')
+        continue
+    break
+
+while True:
+    try:
+        NoiseValue = int(input("Environment Noise (0 dB - 130 dB): "))
+    except:
+        print('Your input is not valid')
+        continue
+    if (NoiseValue < 0) or (NoiseValue > 130):
+        print('Please enter valid input')
+        continue
+    break
+
 values = (CPUTemperature, EnvTemperature, NoiseValue)
 
 # Finding Inference Values
