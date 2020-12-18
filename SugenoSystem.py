@@ -51,10 +51,10 @@ for rule in rules:
     completeRule.append(Rule(Variables, rule))
 
 # Start Program
-print("== CPU Fan Speed Fuzzy System ==\n")
+print("== CPU Fan Speed Fuzzy System ==")
 print("Juandito Batara Kuncoro (18/427582/PA/18542)")
 print("Setyawan Putra Sujana (18/427594/PA/18554)")
-print("Nauval Raafi Tanuwijaya (18/430271/PA/18784)")
+print("Nauval Raafi Tanuwijaya (18/430271/PA/18784)\n")
 CPUTemperature = int(input("CPU Temperature (0 celcius - 110 celcius): "))
 EnvTemperature = int(
     input("Environment Temperature (10 celcius - 40 celcius): "))
